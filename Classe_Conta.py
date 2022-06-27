@@ -1,7 +1,6 @@
 # Importando a classe historico
 from Classe_Historico import *
 
-
 # Criação a classe conta
 class Conta:
     # Aqui criamos os atributos da classe conta
@@ -31,8 +30,6 @@ class Conta:
             # Essa linha é a responsável por enviar os valores do saque para a lista "tran"
             self.historico.tran.append(f'Saque de {saque}')
             return self.saldo
-        else:
-            print('Seu saldo é insuficiente.')
 
     # Aqui criamos o método transferência, o valor informado pelo usuário será subtraido da conta do cliente 1 e adcionado a conta do cliente 2
     def dados4(self, transfe, conta):
@@ -45,3 +42,6 @@ class Conta:
     # Aqui criamos o método extrato, todas as transações feitas pelo cliente serão armazenadas em uma lista denominada "tran", depois será exibida para o cliente
     def dados5(self):
         self.historico.transacoes()
+
+    def dados6(self):
+        self.historico.imprimir()
