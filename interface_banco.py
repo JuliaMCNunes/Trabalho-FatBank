@@ -28,10 +28,11 @@ def login1():
     f2.pack()
 
 def confir_f():
-    if ra.get() != raf and sh1.get() != senhaf:
-        tkinter.messagebox.showerror("Erro!", "RA ou senha inválidos!")
-    else:
+    conta = 0
+    if ra.get() == raf and sh1.get() == senhaf:
         cadastro_cliente()
+    else:
+        tkinter.messagebox.showerror("Erro!", "RA ou senha inválidos!")
 
 # =================================FORMATAÇÕES DAS ENTRADAS DO CADASTRO DE CLIENTES=====================================
 def format_cpf(event=None):
@@ -123,12 +124,15 @@ def login2():
     f3.pack()
 
 def confir_c():
-    global lista_contas, us2, sh3
+    global lista_contas, us2, sh3, conta
+    conta = 0
     for i in range(len(lista_contas)):
         if lista_contas[i].usuario == us2.get() and lista_contas[i].senha == sh3.get():
             menu()
         else:
-            tkinter.messagebox.showerror("Erro!", "Usuário ou senha inválidos!")
+            conta += 1
+            if conta == len(lista_contas):
+                tkinter.messagebox.showerror("Erro!", "Usuário ou senha inválidos!")
 
 # ==================================TELA DE MENU DE OPIÇÕES DE OPERAÇÃO BANCÁRIA========================================
 def menu():
