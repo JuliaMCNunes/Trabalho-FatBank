@@ -495,7 +495,7 @@ lab_extrato = Label(f9, image=telaextra)
 lab_extrato.pack()
 
 # =============================================WIDGETS DO NONO FRAME====================================================
-extrava = Label(f9, text='', background=BackGray, foreground=fore, bd=0)
+extrava = Label(f9, text='', background=BackGray, font='Arial 15', foreground=fore, bd=0)
 extrava.place(width=441, height=210, x=275, y=167)
 
 extra = Button(f9, image=btex, bd=0, command=imprime)
